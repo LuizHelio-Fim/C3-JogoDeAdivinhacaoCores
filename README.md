@@ -61,7 +61,7 @@ Sem necessidade de barra de rolagem em dispositivos móveis!
 
 ## 👨‍💻 Autor
 
-Desenvolvido como projeto acadêmico para a disciplina de Desenvolvimento WEB I
+Desenvolvido como projeto acadêmico para a disciplina de Desenvolvimento WEB I por Luiz Hélio
 
 ---
 
