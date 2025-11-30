@@ -76,7 +76,7 @@ function exibirCores() {
         botaoCor.textContent = cor
         botaoCor.style.backgroundColor = cor
         botaoCor.onclick = function() {
-            verificarCor(cor)
+            verificarCor(cor, botaoCor)
         }
         coresContainer.appendChild(botaoCor)
     })
@@ -85,11 +85,17 @@ function exibirCores() {
 }
 
 /* Função para verificar se a cor clicada está correta */
-function verificarCor(corClicada) {
+function verificarCor(corClicada, botao) {
     if (!jogoIniciado) return
+    
+    // Desabilita o botão clicado para não poder clicar novamente
+    botao.disabled = true
+    botao.style.cursor = 'not-allowed'
+    botao.style.opacity = '0.6'
     
     if (corClicada === corCerta) {
         // Acertou!
+        document.title = 'VENCEU!!!'
         document.body.style.backgroundColor = corCerta
         var paragrafo = document.querySelector('p')
         paragrafo.textContent = '🎉 Parabéns! Você acertou a cor ' + corCerta + '!'
@@ -105,6 +111,7 @@ function verificarCor(corClicada) {
             paragrafo.textContent = '❌ Errou! Tentativas restantes: ' + tentativas
             paragrafo.style.color = '#dc3545'
         } else {
+            document.title = 'PERDEU!!!'
             paragrafo.textContent = '😢 Você perdeu! A cor correta era ' + corCerta
             paragrafo.style.color = '#dc3545'
             desabilitarBotoes()
