@@ -41,8 +41,6 @@ O jogo é totalmente responsivo e pode ser jogado em:
 - 📱 Tablets
 - 📱 Smartphones
 
-Sem necessidade de barra de rolagem em dispositivos móveis!
-
 ## 🛠️ Tecnologias Utilizadas
 
 - **HTML5**: Estrutura da página

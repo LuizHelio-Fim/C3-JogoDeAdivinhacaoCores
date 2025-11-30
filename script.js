@@ -47,7 +47,7 @@ function iniciarJogo() {
     botaoComecar.style.display = 'none'
     
     var paragrafo = document.querySelector('p')
-    paragrafo.textContent = 'Tentativas restantes: ' + tentativas
+    paragrafo.innerHTML = '<strong>Tentativas restantes: <span style="color: #dc3545;">' + tentativas + '</span></strong>'
     
     exibirCores()
 }
@@ -88,6 +88,18 @@ function verificarCor(corClicada, botao) {
     
     if (corClicada === corCerta) {
         document.title = 'VENCEU!!!'
+        
+        // Criar elemento de acerto com animação
+        var acertoAnimacao = document.createElement('div')
+        acertoAnimacao.className = 'acerto-animacao'
+        acertoAnimacao.textContent = '🎉 Acertou!'
+        document.body.appendChild(acertoAnimacao)
+        
+        // Remover o elemento após a animação
+        setTimeout(function() {
+            acertoAnimacao.remove()
+        }, 2500)
+        
         document.body.style.backgroundColor = corCerta
         var paragrafo = document.querySelector('p')
         paragrafo.textContent = '🎉 Parabéns! Você acertou a cor ' + corCerta + '!'
@@ -96,11 +108,23 @@ function verificarCor(corClicada, botao) {
         mostrarBotaoReiniciar()
     } else {
         tentativas--
+        
+        // Criar elemento de erro com animação
+        var erroAnimacao = document.createElement('div')
+        erroAnimacao.className = 'erro-animacao'
+        erroAnimacao.textContent = '❌ Errou!'
+        document.body.appendChild(erroAnimacao)
+        
+        // Remover o elemento após a animação
+        setTimeout(function() {
+            erroAnimacao.remove()
+        }, 2500)
+        
         var paragrafo = document.querySelector('p')
         
         if (tentativas > 0) {
-            paragrafo.textContent = '❌ Errou! Tentativas restantes: ' + tentativas
-            paragrafo.style.color = '#dc3545'
+            paragrafo.innerHTML = '<strong>Tentativas restantes: <span style="color: #dc3545;">' + tentativas + '</span></strong>'
+            paragrafo.style.color = '#000'
         } else {
             document.title = 'PERDEU!!!'
             paragrafo.textContent = '😢 Você perdeu! A cor correta era ' + corCerta
