@@ -34,7 +34,6 @@ function iniciarJogo() {
     tentativas = 3
     jogoIniciado = true
     
-    // Gera 10 cores aleatórias sem repetição
     while (cores.length < 10) {
         var cor = gerarCorAleatoria()
         if (cores.indexOf(cor) === -1) {
@@ -42,10 +41,8 @@ function iniciarJogo() {
         }
     }
     
-    // Escolhe a cor correta
     corCerta = cores[Math.floor(Math.random() * cores.length)]
     
-    // Remove o botão "Começar" e exibe as cores
     var botaoComecar = document.querySelector('.button')
     botaoComecar.style.display = 'none'
     
@@ -59,17 +56,14 @@ function iniciarJogo() {
 function exibirCores() {
     var container = document.querySelector('.container')
     
-    // Remove cores anteriores se existirem
     var coresExistentes = document.querySelector('.cores-container')
     if (coresExistentes) {
         coresExistentes.remove()
     }
     
-    // Cria container para as cores
     var coresContainer = document.createElement('div')
     coresContainer.className = 'cores-container'
     
-    // Cria um botão para cada cor
     cores.forEach(function(cor) {
         var botaoCor = document.createElement('button')
         botaoCor.className = 'cor-botao'
@@ -88,13 +82,11 @@ function exibirCores() {
 function verificarCor(corClicada, botao) {
     if (!jogoIniciado) return
     
-    // Desabilita o botão clicado para não poder clicar novamente
     botao.disabled = true
     botao.style.cursor = 'not-allowed'
     botao.style.opacity = '0.6'
     
     if (corClicada === corCerta) {
-        // Acertou!
         document.title = 'VENCEU!!!'
         document.body.style.backgroundColor = corCerta
         var paragrafo = document.querySelector('p')
@@ -103,7 +95,6 @@ function verificarCor(corClicada, botao) {
         desabilitarBotoes()
         mostrarBotaoReiniciar()
     } else {
-        // Errou
         tentativas--
         var paragrafo = document.querySelector('p')
         
