@@ -32,7 +32,7 @@ git clone https://github.com/LuizHelio-Fim/C3-JogoDeAdivinhacaoCores.git
 
 2. Abra o arquivo `index.html` em seu navegador
 
-Ou simplesmente baixe os arquivos e abra o `index.html` diretamente!
+Ou simplesmente clique aqui: https://luizhelio-fim.github.io/C3-JogoDeAdivinhacaoCores/
 
 ## 📱 Responsividade
 
@@ -61,7 +61,7 @@ Sem necessidade de barra de rolagem em dispositivos móveis!
 
 ## 👨‍💻 Autor
 
-Desenvolvido como projeto acadêmico para a disciplina de Desenvolvimento WEB I
+Desenvolvido como projeto acadêmico para a disciplina de Desenvolvimento WEB I por Luiz Hélio
 
 ---
 
